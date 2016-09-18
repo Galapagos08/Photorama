@@ -6,17 +6,20 @@
 //  Copyright © 2016 Dan Esrey. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "PhotosViewController.h"
+#import "PhotoStore.h"
 
-@interface ViewController ()
+@interface PhotosViewController ()
+@property (nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
-@implementation ViewController
+@implementation PhotosViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    [self.photoStore fetchRecentPhotos];
 }
 
 
