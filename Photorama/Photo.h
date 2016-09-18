@@ -6,7 +6,7 @@
 //  Copyright © 2016 Dan Esrey. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Photo : NSObject
 
@@ -14,6 +14,7 @@
 @property(nonatomic, readonly) NSURL *remoteURL;
 @property(nonatomic, readonly, copy) NSString *photoID;
 @property(nonatomic, readonly) NSDate *dateTaken;
+@property(nonatomic) UIImage *image;
 
 - (instancetype)initWithTitle:(NSString *)title
                       photoID:(NSString *)photoID

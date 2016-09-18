@@ -7,6 +7,7 @@
 //
 
 #import "FlickrAPI.h"
+#import "Photo.h"
 
 NSString * const APIKey = @"a6d819499131071f158fd740860a5a88";
 NSString * const BaseURLString = @"https://api.flickr.com/services/rest";
@@ -49,16 +50,47 @@ NSString * const RecentPhotosMethod = @"flickr.photos.getRecent";
 + (NSArray *)photosFromJSONData:(NSData *)jsonData {
     NSMutableArray *photos = [NSMutableArray array];
     NSError *parseError = nil;
-    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                    options:0
-                                                      error:&parseError];
+    NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                               options:0
+                                                                 error:&parseError];
     
     if (jsonObject != nil) {
-        NSLog(@"%@", jsonObject);
+        NSDictionary *jsonPhotosDict = jsonObject[@"photos"];
+        NSArray *jsonPhotosArray = jsonPhotosDict[@"photo"];
+        for (NSDictionary *jsonSinglePhotoDict in jsonPhotosArray) {
+            Photo *photo = [FlickrAPI photoFromJSON:jsonSinglePhotoDict];
+            if (photo) {
+                [photos addObject:photo];
+            }
+        }
     } else {
         NSLog(@"Failed to parse JSON data. Error: %@", parseError);
     }
     return photos; // returning empty array for now
 }
-     
+
++ (NSDateFormatter *)dateFormatter {
+    static NSDateFormatter *formatter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        formatter = [NSDateFormatter new];
+        formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    });
+    return formatter;
+}
+
++ (Photo *)photoFromJSON:(NSDictionary *)jsonDict {
+    NSString *photoID = jsonDict[@"id"];
+    NSString *title = jsonDict[@"title"];
+    NSURL *URL = [NSURL URLWithString:jsonDict[@"url_h"]];
+    NSDate *dateTaken = [[FlickrAPI dateFormatter] dateFromString:jsonDict[@"datetaken"]];
+    if (!photoID || !title || !URL || !dateTaken) {
+        return nil; }
+    Photo *photo = [[Photo alloc] initWithTitle:title
+                                        photoID:photoID
+                                      remoteURL:URL
+                                      dateTaken:dateTaken];
+    return photo;
+}
+
 @end

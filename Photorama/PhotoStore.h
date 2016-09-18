@@ -6,10 +6,12 @@
 //  Copyright © 2016 Dan Esrey. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+@class Photo;
 
 @interface PhotoStore : NSObject
 
-- (void)fetchRecentPhotos;
+- (void)fetchRecentPhotosWithCompletion:(void(^)(NSArray *))completion;
+- (void)fetchImageForPhoto:(Photo *)photo completion:(void(^)(UIImage *))completion;
 
 @end
