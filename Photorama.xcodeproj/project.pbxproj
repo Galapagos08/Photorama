@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7AFF7D31D8F1BA3008D031A /* PhotoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F7AFF7D21D8F1BA3008D031A /* PhotoDataSource.m */; };
+		F7AFF7D61D8F1F5A008D031A /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7AFF7D51D8F1F5A008D031A /* PhotoCollectionViewCell.m */; };
+		F7AFF7D91D8F23AB008D031A /* PhotoInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7AFF7D81D8F23AB008D031A /* PhotoInfoViewController.m */; };
 		F7E9E4CE1D8EE9570048A2FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E9E4CD1D8EE9570048A2FE /* main.m */; };
 		F7E9E4D11D8EE9570048A2FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E9E4D01D8EE9570048A2FE /* AppDelegate.m */; };
 		F7E9E4D41D8EE9570048A2FE /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E9E4D31D8EE9570048A2FE /* PhotosViewController.m */; };
@@ -19,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F7AFF7D11D8F1BA3008D031A /* PhotoDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDataSource.h; sourceTree = "<group>"; };
+		F7AFF7D21D8F1BA3008D031A /* PhotoDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDataSource.m; sourceTree = "<group>"; };
+		F7AFF7D41D8F1F5A008D031A /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		F7AFF7D51D8F1F5A008D031A /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		F7AFF7D71D8F23AB008D031A /* PhotoInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoInfoViewController.h; sourceTree = "<group>"; };
+		F7AFF7D81D8F23AB008D031A /* PhotoInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoInfoViewController.m; sourceTree = "<group>"; };
 		F7E9E4C91D8EE9570048A2FE /* Photorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7E9E4CD1D8EE9570048A2FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F7E9E4CF1D8EE9570048A2FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,13 +80,19 @@
 				F7E9E4D01D8EE9570048A2FE /* AppDelegate.m */,
 				F7E9E4D21D8EE9570048A2FE /* PhotosViewController.h */,
 				F7E9E4D31D8EE9570048A2FE /* PhotosViewController.m */,
+				F7AFF7D11D8F1BA3008D031A /* PhotoDataSource.h */,
+				F7AFF7D21D8F1BA3008D031A /* PhotoDataSource.m */,
 				F7E9E4D51D8EE9570048A2FE /* Main.storyboard */,
+				F7AFF7D41D8F1F5A008D031A /* PhotoCollectionViewCell.h */,
+				F7AFF7D51D8F1F5A008D031A /* PhotoCollectionViewCell.m */,
 				F7E9E4E91D8EFB7E0048A2FE /* Photo.h */,
 				F7E9E4EA1D8EFB7E0048A2FE /* Photo.m */,
 				F7E9E4E31D8EED0F0048A2FE /* FlickrAPI.h */,
 				F7E9E4E41D8EED0F0048A2FE /* FlickrAPI.m */,
 				F7E9E4E61D8EF2370048A2FE /* PhotoStore.h */,
 				F7E9E4E71D8EF2370048A2FE /* PhotoStore.m */,
+				F7AFF7D71D8F23AB008D031A /* PhotoInfoViewController.h */,
+				F7AFF7D81D8F23AB008D031A /* PhotoInfoViewController.m */,
 				F7E9E4D81D8EE9580048A2FE /* Assets.xcassets */,
 				F7E9E4DA1D8EE9580048A2FE /* LaunchScreen.storyboard */,
 				F7E9E4DD1D8EE9580048A2FE /* Info.plist */,
@@ -171,7 +186,10 @@
 				F7E9E4D11D8EE9570048A2FE /* AppDelegate.m in Sources */,
 				F7E9E4CE1D8EE9570048A2FE /* main.m in Sources */,
 				F7E9E4E81D8EF2370048A2FE /* PhotoStore.m in Sources */,
+				F7AFF7D61D8F1F5A008D031A /* PhotoCollectionViewCell.m in Sources */,
+				F7AFF7D31D8F1BA3008D031A /* PhotoDataSource.m in Sources */,
 				F7E9E4E51D8EED0F0048A2FE /* FlickrAPI.m in Sources */,
+				F7AFF7D91D8F23AB008D031A /* PhotoInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +348,7 @@
 				F7E9E4E21D8EE9580048A2FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
